@@ -1,6 +1,7 @@
 import React from "react";
 
 import HomeHeader from "../components/HomeComponents/HomeHeader";
+import HomeThreeColumn from "../components/HomeComponents/HomeThreeColumn";
 import HomeMain from '../components/HomeComponents/HomeMain';
 import HomeAbout from '../components/HomeComponents/HomeAbout';
 import HomeWhoHelp from '../components/HomeComponents/HomeWhoHelp';
@@ -11,6 +12,7 @@ const Home = () => {
     return (
         <div className="Home">
             <HomeHeader/>
+            <HomeThreeColumn/>
             <HomeMain/>
             <HomeAbout/>
             <HomeWhoHelp/>
