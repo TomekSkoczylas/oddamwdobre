@@ -7,8 +7,11 @@ import { Link as ScrollLink } from "react-scroll";
 const HomeHeader = () => {
     return (
         <div className="HomeHeader" id="Header">
-            <Navigation/>
-            <HeaderMain/>
+            <div className="header__img"/>
+            <div className="header__right-side">
+                <Navigation/>
+                <HeaderMain/>
+            </div>
         </div>
     )
 }

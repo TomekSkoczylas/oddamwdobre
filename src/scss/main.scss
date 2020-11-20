@@ -1,6 +1,20 @@
+// Settings
+
 @import "./settings/colors";
 @import "./settings/fonts";
-@import "./Home.scss";
+
+
+// Atoms
+
+
+// Molecules
+
+
+// Sections
+
+@import "./sections/HomeHeader.scss";
+
+// Basic styles
 
 body {
     font-family: $font-base;
