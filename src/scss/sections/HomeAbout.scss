@@ -1,0 +1,42 @@
+.HomeAbout {
+    display: flex;
+    background-color: $light-grey;
+    color: $dark-grey;
+
+    .about__panel {
+        margin: 147px auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about__title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: normal;
+    }
+
+
+    .about__text {
+        text-align: center;
+        font-size: 23.5px;
+        line-height: 42.5px;
+    }
+
+
+    .about__img { 
+        width: 50%;
+        background-image: url("../../assets/People.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+   .about__signature {
+        width: 165px;
+        height: 118.5px;
+        background-image: url("../../assets/Signature.svg");
+        background-size: contain;
+        position: relative;
+        left: 75%;
+   }
+
+}

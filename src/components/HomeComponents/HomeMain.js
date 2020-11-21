@@ -6,7 +6,7 @@ const HomeMain = () => {
         <div className="HomeMain" id="Main">
             <div className="main-title">
                 <div className="main-title__text">Wystarczą 4 proste kroki
-                    <div className="main-title__img"></div>
+                    <div className="main-title__decoration decoration"></div>
                 </div>
             </div>
             <div className="main-steps">
