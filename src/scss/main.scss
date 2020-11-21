@@ -6,15 +6,18 @@
 
 // Atoms
 
+@import "./atoms/bigButton.scss";
 
 // Molecules
 
 @import "./molecules/columns.scss";
+@import "./molecules/step.scss";
 
 // Sections
 
 @import "./sections/HomeHeader.scss";
 @import "./sections/HomeThreeColumn.scss";
+@import "./sections/HomeMain.scss";
 
 // Basic styles
 

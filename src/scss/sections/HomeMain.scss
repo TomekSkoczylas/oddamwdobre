@@ -1,0 +1,62 @@
+
+
+
+.HomeMain {
+    color: $dark-grey;
+
+
+    .main-title {
+        &__text {
+            font-size: 24px;
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        &__img {
+            width: 150px;
+            height: 20px;
+            background-image: url("../../assets/Decoration.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 25px auto;
+        }
+
+    }
+
+
+
+
+
+    .main-steps {
+        display: flex;
+        justify-content: center;
+        background-color: $light-grey;
+
+        &__step-1 {
+            .step__img {
+                background-image: url("../../assets/Icon-1.svg");
+            }    
+        }
+        &__step-2 {
+            .step__img {
+                background-image: url("../../assets/Icon-2.svg");
+            }    
+        }
+        &__step-3 {
+            .step__img {
+                background-image: url("../../assets/Icon-3.svg");
+            }
+        }
+        &__step-4 {
+            .step__img {
+                background-image: url("../../assets/Icon-4.svg");
+            }
+        }
+    }
+
+    .main-button {
+        margin: 27.5px auto 63px auto;        
+    }
+}
+

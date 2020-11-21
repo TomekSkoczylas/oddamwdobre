@@ -79,12 +79,12 @@ const HeaderMain = () => {
             <div className="header-main__btns">
                 <RouterLink 
                     to="./login" 
-                    className="header-main__btn"
+                    className="header-main__btn big-btn"
                     >Oddaj rzeczy
                 </RouterLink>
                 <RouterLink  
                     to="./login" 
-                    className="header-main__btn"
+                    className="header-main__btn big-btn"
                     >Zorganizuj zbiórkę 
                 </RouterLink>
             </div>
