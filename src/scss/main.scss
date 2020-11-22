@@ -11,6 +11,7 @@
 @import "./atoms/decoration.scss";
 @import "./atoms/smalButtons.scss";
 @import "./atoms/nav-link.scss";
+@import './atoms/mediumButton.scss';
 
 // Molecules
 
@@ -18,13 +19,14 @@
 @import "./molecules/step.scss";
 @import "./molecules/navigation.scss";
 @import "./molecules/header-main.scss";
-
+@import './molecules/heplPanel.scss';
 // Sections
 
 @import "./sections/HomeHeader.scss";
 @import "./sections/HomeThreeColumn.scss";
 @import "./sections/HomeMain.scss";
 @import "./sections/HomeAbout.scss";
+@import "./sections/HomeWhoHelp.scss";
 
 // Basic styles
 

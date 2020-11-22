@@ -1,0 +1,25 @@
+.help {
+    max-width: 1900px;
+    margin: 10px auto;
+    color: $dark-grey;
+    margin-top: 55px;
+
+    &__title {
+        display: block;
+        text-align: center;
+        font-weight: 200;
+        font-size: 30px;
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: center;
+
+        .med-btn {
+            margin: 10px 40px;
+        }
+
+    }
+
+
+}

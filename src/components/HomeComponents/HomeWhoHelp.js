@@ -1,19 +1,17 @@
 import React, { useState } from "react";
+import { Fund, Ngo, Local } from "./HomeWhoHelpPanel";
+
 
 const HomeWhoHelp = () => {
     const [podmiot, setPodmiot] = useState("fund");
 
     const renderHelp = () => {
         if (podmiot === "fund") {
-            return (
-                <div className="fund">
-                    <p className="fund__descr"></p>
-                    <div className="fund__table">
-
-                    </div>
-
-                </div>
-            )
+            return <Fund/>
+        } else if (podmiot === "ngo") {
+            return <Ngo/>
+        } else {
+            return <Local/>
         }
     }
 
@@ -21,24 +19,27 @@ const HomeWhoHelp = () => {
     return (
         <div className="HomeWhoHelp" id="WhoHelp">
             <div className="help">
-                <h1 className="help__title">Komu pomagamy?</h1>
+                <span className="help__title">Komu pomagamy?</span>
                 <div className="help__decoration decoration"></div>
                 <div className="help__btns">
                     <div 
-                        className="help__fund_btn smol_btn"
+                        className={`med-btn ${(podmiot==="fund") ? "btn--active" : ""}`}
                         onClick={() => setPodmiot("fund")}
                     >Fundacjom
                     </div>
                     <div 
-                        className="help__ngo_btn smol_btn"
+                        className={`med-btn ${(podmiot==="ngo") ? "btn--active" : ""}`}
                         onClick={() => setPodmiot("ngo")}
-                        >Organizacją pozarządowym
+                        >Organizacją <br/> pozarządowym
                     </div>
                     <div 
-                        className="help__local_btn smol_btn"
+                        className={`med-btn ${(podmiot==="local") ? "btn--active" : ""}`}
                         onClick={() => setPodmiot("local")}
-                        >Lokalnym zbiórką
+                        >Lokalnym <br/> zbiórką
                     </div>                    
+                </div>
+                <div>
+                    {renderHelp()}
                 </div>
             </div>
         </div>

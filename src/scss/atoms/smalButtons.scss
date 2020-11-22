@@ -6,6 +6,8 @@
     line-height: 19px;
     color: $dark-grey;
     margin: 10px;
+    border: 1px solid transparent;
+    cursor: pointer;
 
     &:hover {
         border: 1px solid $dark-grey;

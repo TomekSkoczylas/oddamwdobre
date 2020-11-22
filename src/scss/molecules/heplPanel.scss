@@ -1,0 +1,72 @@
+.help-panel {
+    margin: 60px auto;
+    &__text {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    &__table {
+        width: 70%;
+        margin: 0 auto;
+
+        div:nth-child(2) {
+            border-top: 1px solid #707070;
+        }
+       
+        div:nth-child(3) {
+            border-top: 1px solid #707070;
+        }
+
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+       
+    }
+
+    &__client {
+        display: flex;
+        flex-direction: column;
+        margin: 20.5px 0;
+    }
+
+    &__client-name {
+        font-size: 20.5px;
+        line-height: 24.5px;
+    }
+
+    &__client-dscrp {
+        font-size: 14.2px;
+        line-height: 17px;
+    }
+
+    &__things {
+        font-size: 14.2px;
+        display: flex;
+        align-items: center;
+        margin-right: 29px;
+    }
+
+    &__btns {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+
+        .btn--active {
+            border: 1px solid $dark-grey; 
+        }
+    }
+
+    &__btn {
+        width: 30px;
+        height: 40px;
+        border: 1px solid transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        cursor: pointer;
+    }
+}
+
