@@ -1,0 +1,13 @@
+.nav-link {
+    text-decoration: none;
+    color: $grey;
+    font-size: 10px;
+    font-weight: 100;
+    padding: 7px 8px;
+    margin: 10px;
+
+    &:hover {
+        border: 1px solid $yellow;
+    } 
+
+}

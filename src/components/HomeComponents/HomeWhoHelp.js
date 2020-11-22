@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 
 const HomeWhoHelp = () => {
-    const [ help, setHelp ] = useState("fund");
+    const [podmiot, setPodmiot] = useState("fund");
 
-    // const renderHelp = () => {
-    //     if (help === "fund") {
-    //         return (
-    //             <div className="fund">
-    //                 <p className="fund__descr"></p>
+    const renderHelp = () => {
+        if (podmiot === "fund") {
+            return (
+                <div className="fund">
+                    <p className="fund__descr"></p>
+                    <div className="fund__table">
 
-    //             </div>
-    //         )
-    //     }
-    // }
+                    </div>
+
+                </div>
+            )
+        }
+    }
 
 
     return (
@@ -23,17 +26,17 @@ const HomeWhoHelp = () => {
                 <div className="help__btns">
                     <div 
                         className="help__fund_btn smol_btn"
-                        onClick={setHelp("fund")}
+                        onClick={() => setPodmiot("fund")}
                     >Fundacjom
                     </div>
                     <div 
                         className="help__ngo_btn smol_btn"
-                        onClick={setHelp("ngo")}
+                        onClick={() => setPodmiot("ngo")}
                         >Organizacją pozarządowym
                     </div>
                     <div 
                         className="help__local_btn smol_btn"
-                        onClick={setHelp("local")}
+                        onClick={() => setPodmiot("local")}
                         >Lokalnym zbiórką
                     </div>                    
                 </div>

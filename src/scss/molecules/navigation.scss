@@ -1,0 +1,18 @@
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    margin-top: 30px;
+
+    &__first-row {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__second-row {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+}

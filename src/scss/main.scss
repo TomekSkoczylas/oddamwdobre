@@ -9,11 +9,15 @@
 
 @import "./atoms/bigButton.scss";
 @import "./atoms/decoration.scss";
+@import "./atoms/smalButtons.scss";
+@import "./atoms/nav-link.scss";
 
 // Molecules
 
 @import "./molecules/columns.scss";
 @import "./molecules/step.scss";
+@import "./molecules/navigation.scss";
+@import "./molecules/header-main.scss";
 
 // Sections
 

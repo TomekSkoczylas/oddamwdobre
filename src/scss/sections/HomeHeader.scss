@@ -2,15 +2,16 @@
 .HomeHeader {
     display: flex;
     
-    
-    
+    .header__right-side {
+        width:54%;
+    }
+
     .header__img {
-        width: 885px;
-        height: 963px;
+        width: 46%;
+        height: 760px;
         background-image: url("../../assets/Home-Hero-Image.jpg");
         background-size: cover;
         background-position: right;
     }
 }
-
 
