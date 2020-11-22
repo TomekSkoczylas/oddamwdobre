@@ -1,0 +1,82 @@
+.HomeContact {
+    height: 810px;
+    background-image: url("../../assets/Background-Contact-Form.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background-color:rgba(255, 255, 255, 0.8);
+    }
+}
+
+.contact {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;   
+}
+
+.contact-form {
+    color: $dark-grey;
+    width: 459.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 7%;
+    margin-top: 158px;
+
+    &__title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    &__data-inputs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+      
+    }
+
+    &__form {
+        margin-top: 30px;
+        .home-input { 
+            font-size: 14px;
+            width: 100%;
+        }
+           
+        .message-input {
+            width: 100%;
+            height: 60.5px;
+            overflow: hidden;
+            font-size: 14px;
+            resize: none;
+        }
+    }
+
+    &__data-wrap {
+        margin-right: 10px;   
+    }
+
+    &__message-wrap {
+        margin-top: 30px;
+    }
+
+    &__label {
+        font-size: 12.5px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    &__submit-btn {
+        background: transparent;
+        border: 1px solid $dark-grey;
+        font-size: 14.2px;
+        padding: 10px 40px;
+        margin-top: 20px;
+        float: right;
+        cursor: pointer;
+    }
+}

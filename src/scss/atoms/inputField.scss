@@ -1,0 +1,13 @@
+.input {
+    border: 0;
+    border-bottom: 1px solid $grey;
+    outline: 0;
+    color: $dark-grey;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    transition: color 0.2s;
+    &:focus {
+        border-color: $dark-grey; 
+    }
+}

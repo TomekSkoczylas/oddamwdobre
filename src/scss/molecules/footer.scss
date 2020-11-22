@@ -1,0 +1,32 @@
+.footer {
+    margin-top: 17%;
+    display: flex;
+    justify-content: space-between;
+
+    &__CL-logo {
+        font-size: 14.2px;
+    }
+
+    &__icons {
+        margin-right: 80px;
+    }
+
+    &__fb {
+        display: inline-block;
+        width: 23.5px;
+        height: 23.5px;
+        background-image: url("../../assets/Facebook.png");
+        background-size: contain;
+        margin: 0 5px;
+    }
+
+    &__insta {
+        display: inline-block;
+        width: 23.5px;
+        height: 23.5px;
+        background-image: url("../../assets/Instagram.png");
+        background-size: contain;
+        margin: 0 5px;
+    }
+
+}
