@@ -1,6 +1,7 @@
 .smal-btn {
     text-decoration: none;
-    padding: 7px 16px;
+    background: transparent;
+    padding: 7px;
     font-size: 14px;
     font-weight: 100;
     line-height: 19px;
@@ -12,5 +13,4 @@
     &:hover {
         border: 1px solid $dark-grey;
     }
-
 }

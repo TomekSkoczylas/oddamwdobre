@@ -4,10 +4,13 @@ import Home from "../src/components/Home";
 import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 import Logout from '../src/components/Logout';
+import Navigation from "../src/components/navigation";
+
 
 const App = () => {
   return (
     <Router>
+        <Navigation/>
         <div className="App">
           <Route exact path="/" component={Home}/>
           <Route path='/login' component={Login}/>

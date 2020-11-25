@@ -1,17 +1,26 @@
 
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+
 .HomeHeader {
     display: flex;
-    
-    .header__right-side {
-        width:54%;
-    }
+    float: right;
+    width: 52%;
 
-    .header__img {
-        width: 46%;
-        height: 760px;
-        background-image: url("../../assets/Home-Hero-Image.jpg");
-        background-size: cover;
-        background-position: right;
+    .header__right-side {
     }
 }
 
+.header__img {
+    display: block;
+    width: 46%;
+    height: 760px;
+    background-image: url("../../assets/Home-Hero-Image.jpg");
+    background-size: cover;
+    background-position: right;
+    float: left;
+
+}
