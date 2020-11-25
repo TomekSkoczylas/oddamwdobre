@@ -94,7 +94,7 @@ const HomeContact = () => {
                     <div className="contact-form">
                         <span className="contact-form__title">Skontaktuj się z nami</span>
                         <div className="decoration"></div>
-                        <div className={`contac-form__send-msg ${!responseok && "invisble"}`}>Wiadomość została wysłana! <br/> Wkrótce się skontaktujemy.</div>
+                        <div className={`form__send-msg ${!responseok && "invisble"}`}>Wiadomość została wysłana! <br/> Wkrótce się skontaktujemy.</div>
                         <form className="contact-form__form" onSubmit={onSubmit}>
                         <div className="contact-form__data-inputs">
                             <div className="contact-form__data-wrap">
@@ -108,7 +108,7 @@ const HomeContact = () => {
                                     onChange={onChange}
 
                                 />
-                                <div className={`contact-form__valmess ${!!nameok && "invisble"}`} >Podane imię jest nieprawidłowe!</div>
+                                <div className={`form__valmess ${!!nameok && "invisble"}`} >Podane imię jest nieprawidłowe!</div>
                             </div>
                             <div>
                                 <label htmlFor="email" className="contact-form__label">Wpisz swój email</label>
@@ -120,7 +120,7 @@ const HomeContact = () => {
                                     placehol="abc@xyz.pl"
                                     onChange={onChange}
                                 />
-                                <div className={`contact-form__valmess ${!!mailok && "invisble"}`} >Podany email jest nieprawidłowy!</div>
+                                <div className={`form__valmess ${!!mailok && "invisble"}`} >Podany email jest nieprawidłowy!</div>
                             </div>
                         </div>
                         <div className="contact-form__message-wrap">
@@ -135,7 +135,7 @@ const HomeContact = () => {
                                     nisi ut aliquip ex ea commodo consequat."
                                 onChange={onChange}
                             />
-                            <div className={`contact-form__valmess ${!!messageok && "invisble"}`} >Wiadomość musi mieć conajmniej 120 znaków</div>
+                            <div className={`form__valmess ${!!messageok && "invisble"}`} >Wiadomość musi mieć conajmniej 120 znaków</div>
                         </div>
                         <button 
                             type="submit"
