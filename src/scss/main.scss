@@ -34,8 +34,15 @@
 @import './sections/HomeContact.scss';
 @import './sections/Login.scss';
 @import './sections/Register.scss';
+@import './sections/Logut.scss';
+@import './sections/OddajRzeczy.scss';
+
 
 // Basic styles
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: $font-base;

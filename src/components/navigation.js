@@ -34,24 +34,35 @@ const Navigation = () => {
                     className="navigation__scroll-link smal-btn"
                     >O co chodzi?
                 </ScrollLink>
-                <ScrollLink 
+                {/* <ScrollLink 
                     to="About" 
                     smooth={true} 
                     duration={500} 
                     className="navigation__scroll-link smal-btn"
                     >O nas
-                </ScrollLink>
-                <ScrollLink 
+                </ScrollLink> */}
+                <a href="/#About" className="smal-btn">O nas</a>
+                {/* <ScrollLink 
                     to="WhoHelp" 
                     smooth={true} 
                     duration={500}  
                     className="navigation__scroll-link smal-btn"
                     >Fundacje i organizacje
-                </ScrollLink>
+                </ScrollLink> */}
+                <a 
+                    href='/'
+                    onClick={e=> {
+                        let help = document.getElementById("WhoHelp");
+                        e.preventDefault();
+                        help && help.scrollIntoView();
+                    }}
+                    className="smal-btn"
+                    >Fundacje i organizacje 
+                </a>        
                 <ScrollLink 
                     to="Contact" 
                     smooth={true} 
-                    duration={500} 
+                    duration={200} 
                     className="navigation__scroll-link smal-btn"
                     >Kontakt
                 </ScrollLink>

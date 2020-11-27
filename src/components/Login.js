@@ -21,8 +21,10 @@ const Login = () => {
 
     const onSubmit = event => {
         event.preventDefault();
-        setFeedback({...INIT_FEEDBACK})
+        setFeedback({...INIT_FEEDBACK});
+        console.log("submit");
         if (!validateEmail(email)) {
+            console.log(email);
             setFeedback(prevState => ({
                 ...prevState,
                 mailok: false,
@@ -35,7 +37,6 @@ const Login = () => {
         } else {
             console.log("zalogowałaś się!");
         }    
-
     }
 
     return (
@@ -44,7 +45,7 @@ const Login = () => {
                 <span className="login__title">Zaloguj się</span>
                 <div className="decoration"/>
                 <div className="login__form">
-                    <form onSubmit={onSubmit}>
+                    <form>
                         <div className="login__input-wraper">
                             <label htmlFor="email" className="login__label">Email</label>
                             <input
@@ -61,7 +62,7 @@ const Login = () => {
                             <input
                                 className="input login-input"
                                 name="password"
-                                type="text"
+                                type="password"
                                 value={password}
                                 onChange={event => setPassword(event.target.value)}
                             />
@@ -75,11 +76,11 @@ const Login = () => {
                         className="login__btn smal-btn"
                         >Załuż konto
                     </Link>
-                    <button 
-                        type="submit"
+                    <div
+                        onClick={onSubmit}
                         className="login__btn smal-btn"
                         >Zaloguj się
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>

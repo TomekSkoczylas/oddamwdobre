@@ -5,6 +5,7 @@ import Login from '../src/components/Login';
 import Register from '../src/components/Register';
 import Logout from '../src/components/Logout';
 import Navigation from "../src/components/navigation";
+import OddajRzeczy from '../src/components/OddajRzeczy';
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
           <Route path='/logout' component={Logout}/>
+          <Route path='/oddaj-rzeczy' component={OddajRzeczy}/>
         </div>
     </Router>
   );

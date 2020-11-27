@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-
+import { validateEmail } from "./functions";
 
 const INIT_FEEDBACK = {
     mailok: true,
     passwordok: true,
+    secndpassok: true,
 }
 
 const Register = () => {
@@ -16,11 +17,31 @@ const Register = () => {
     const {
         mailok,
         passwordok,
+        secndpassok,
     } = feedback;
 
 
-    const onSubmit = () => {
-        console.log("dupa");
+    const onSubmit = event => {
+        event.preventDefault();
+        setFeedback({...INIT_FEEDBACK})
+        if (!validateEmail(email)) {
+            setFeedback(prevState => ({
+                ...prevState,
+                mailok: false,
+            }))
+        } else if (password.length < 6) {
+            setFeedback(prevState => ({
+                ...prevState,
+                passwordok: false,
+            }))
+        } else if (secndPass !== password) {
+            setFeedback(prevState => ({
+                ...prevState,
+                secndpassok: false,
+            }))
+        } else {
+            console.log("zarejestorwałeś się")
+        }
     }
 
     return (
@@ -29,7 +50,7 @@ const Register = () => {
                 <span className="register__title">Załóż konto</span>
                 <div className="decoration"/>
                 <div className="register__form">
-                    <form onSubmit={onSubmit}>
+                    <form>
                         <div className="register__input-wraper">
                             <label htmlFor="email" className="register__label">Email</label>
                             <input
@@ -46,7 +67,7 @@ const Register = () => {
                             <input
                                 className="input register-input"
                                 name="password"
-                                type="text"
+                                type="password"
                                 value={password}
                                 onChange={event => setPassword(event.target.value)}
                             />
@@ -57,11 +78,11 @@ const Register = () => {
                             <input
                                 className="input register-input"
                                 name="secndpass"
-                                type="text"
+                                type="password"
                                 value={secndPass}
                                 onChange={event => setSecndPass(event.target.value)}
                             />
-                            <div className={`form__valmess ${!!passwordok && "invisble"}`} >Podane hasło jest za krótkie!</div>
+                            <div className={`form__valmess ${!!secndpassok && "invisble"}`} >Hasła nie są takie same!</div>
                         </div>
                     </form>
                 </div>
@@ -71,11 +92,11 @@ const Register = () => {
                         className="register__btn smal-btn"
                         >Zaloguj się
                     </Link>
-                    <button 
-                        type="submit"
+                    <div 
+                        onClick={onSubmit}
                         className="register__btn smal-btn"
                         >Złóż konto
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
