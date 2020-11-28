@@ -9,9 +9,12 @@
     display: flex;
     float: right;
     width: 52%;
+    
+}
 
-    .header__right-side {
-    }
+.header__right-side {
+    position: relative;
+    top: 200px;
 }
 
 .header__img {
