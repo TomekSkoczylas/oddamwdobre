@@ -1,0 +1,136 @@
+.third-panel {
+    margin-left: 80px;
+    color: $dark-grey;
+
+    
+    &__counter {
+        font-size: 14.2px;
+        padding: 10px 0 40px 0;
+    }
+
+    &__area {
+        &-label {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        &-select {
+            font-size: 18px;
+            font-weight: 100;
+            border: 1px solid $dark-grey;
+            padding: 8px 80px 8px 10px;
+            cursor: pointer;
+            line-height: 60px;
+
+            .chevron {
+                bottom: 14px;
+                left: 70px;
+            }
+        }
+
+        &-options {
+            width: 192.83px;
+            border: 1px solid $dark-grey;
+            position: absolute;
+            background-color: $light-grey;
+        }
+
+        &-option {
+            padding: 4px;
+            font-size: 16px;
+            font-weight: 100;
+            &:hover {
+                 background-color: $grey;   
+            }
+        }
+    }
+
+    &__who {
+        margin-top: 20px;
+
+        &-title {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        &-radios {
+            width: 500px;   
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+    
+        &-label {
+            cursor: pointer;
+            display: flex;
+            margin: 10px 20px 10px 0;
+            align-items: center;
+    
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                    
+                    &:checked + span {
+                        background-color: $yellow;
+                    }
+                }
+    
+                span {
+                    height: 35px;
+                    flex-shrink: 0;
+                    flex-basis: auto;
+                    border: 1px solid $dark-grey;
+                    cursor: pointer;
+                    padding: 0 10px;
+                    display: flex;
+                    align-items: center;
+                }
+        }
+        
+    }
+
+    &__org {
+        margin-top: 20px;
+        &-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &-input {
+            background-color: $light-grey;
+            border: 1px solid $dark-grey;
+            margin: 10px 0;
+            width: 350px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 40px;
+        margin-bottom: 30px;
+
+        .dalej {
+            margin-left: 20px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+        border: 1px solid $dark-grey;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+}
