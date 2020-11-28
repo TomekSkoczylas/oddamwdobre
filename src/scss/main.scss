@@ -23,6 +23,8 @@
 @import "./molecules/header-main.scss";
 @import './molecules/heplPanel.scss';
 @import "./molecules/footer.scss";
+@import './molecules/firstPanel.scss';
+@import './molecules/secondPanel.scss';
 
 // Sections
 
@@ -36,6 +38,7 @@
 @import './sections/Register.scss';
 @import './sections/Logut.scss';
 @import './sections/OddajRzeczy.scss';
+@import './sections/OddajForm.scss';
 
 
 // Basic styles

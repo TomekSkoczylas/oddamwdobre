@@ -1,0 +1,48 @@
+.first-panel {
+    margin-left: 80px;
+    color: $dark-grey;
+
+
+    &__counter {
+        font-size: 14.2px;
+        padding: 10px 0 50px 0;
+    }
+
+
+    &__title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__radio-group {
+        margin-top: 20px;
+    }
+
+    &__radio-label {
+        cursor: pointer;
+        display: flex;
+        margin: 25px 0;
+        align-items: center;
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+                
+                &:checked + span {
+                    background-color: $yellow;
+                }
+            }
+
+            span {
+                height: 30px;
+                flex-shrink: 0;
+                flex-basis: 30px;
+                border: 1px solid $dark-grey;
+                cursor: pointer;
+                margin-right: 15px;
+            }
+    }
+}
