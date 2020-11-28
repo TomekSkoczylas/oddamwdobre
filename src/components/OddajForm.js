@@ -14,6 +14,11 @@ const OddajForm = () => {
         }
     }
 
+    const pageSubtract = () => {
+        if (page > 1 ) {
+            setPage(prevState => prevState -1)
+        }
+    }
 
     const oddajFormRender = () => {
         if (page === 1) {
@@ -87,22 +92,25 @@ const OddajForm = () => {
                     <div className="yellow-band">
                         <h3 className="yellow-band__exclamation">Ważne!</h3>
                         <div className="yellow-band__message">Wszystkie rzeczy do oddania zapakuj w 60l worki. 
-                        Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz <a href="">TUTAJ</a></div>
+                        Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz <a href="https://youtu.be/v0_Y5H_6qd4">TUTAJ</a></div>
                     </div>
                     <div className="grey-panel">
                         <div className="second-panel">
                             <div className="second-panel__counter">Krok 2/4</div>
-                            <span className="second-panel__title">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy</span>
-                            <label className="second-panel__label">Liczba 60l worków
-                                <select value={"-wybierz-"}>
-                                    <option value={"1"}>1</option>
-                                    <option value={"2"}>2</option>
-                                    <option value={"3"}>3</option>
-                                    <option value={"4"}>4</option>
-                                    <option value={"5"}>5</option>    
+                            <div className="second-panel__title">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</div><br/>
+                            <label className="second-panel__label">Liczba 60l worków:
+                                <select className="second-panel__drop-list" value={"1"} placeholder="-wybierz-" name="bags">
+                                    <option className="second-panel__option" value={"1"}>1</option>
+                                    <option className="second-panel__option" value={"2"}>2</option>
+                                    <option className="second-panel__option" value={"3"}>3</option>
+                                    <option className="second-panel__option" value={"4"}>4</option>
+                                    <option className="second-panel__option" value={"5"}>5</option>    
                                 </select>
                             </label>
-                            <div className="oddajForm__img"></div>
+                            <div className="second-panel__btns">
+                                <div onClick={pageSubtract} className="second-panel__btn wstecz">Wstecz</div>
+                                <div onClick={pageAdd} className="second-panel__btn dalej">Dalej</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,10 +120,14 @@ const OddajForm = () => {
         if (page === 3) {
             return (
                 <div className="oddajForm">
-                    <div className="oddajForm__yellow-band"></div>
-                    <div className="oddajForm__grey-panel">
-                        <div className="form-panel"></div>
-                        <div className="oddajForm__img"></div>
+                    <div className="yellow-band">
+                        <h3 className="yellow-band__exclamation">Ważne!</h3> 
+                        <div className="yellow-band__message">Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji 
+                        w wyszukiwarce. Możesz też filtorować organizacje <br/> 
+                        po ich lokalizacjach bądź celu ich pomocy.</div>
+                    </div>
+                    <div className="grey-panel">
+                        <div className="third-panel"></div>
                     </div>
                 </div>
             )
