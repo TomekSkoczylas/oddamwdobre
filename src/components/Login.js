@@ -1,14 +1,18 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+
+import { Link, withRouter } from "react-router-dom";
+import { compose } from "recompose";
+
 import { validateEmail } from "./functions";
 
+import { withFirebase } from './Firebase';
 
 const INIT_FEEDBACK = {
     mailok: true,
     passwordok: true,
 }
 
-const Login = () => {
+const LoginBase = props => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState(''); 
     const [feedback, setFeedback] = useState({...INIT_FEEDBACK});
@@ -35,7 +39,14 @@ const Login = () => {
                 passwordok: false,
             }))
         } else {
-            console.log("zalogowałaś się!");
+           props.firebase
+           .doSignInWithEmailAndPassword(email, password)
+           .then(()=> {
+               setEmail('');
+               setPassword('');
+               props.history.push('/oddaj-rzeczy');
+           }) 
+           .catch(error => {console.log(error)});
         }    
     }
 
@@ -86,5 +97,10 @@ const Login = () => {
         </div>
     )
 }
+
+const Login = compose(
+    withRouter,
+    withFirebase,
+    )(LoginBase);
 
 export default Login;

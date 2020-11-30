@@ -1,5 +1,9 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+
+import { Link, withRouter } from "react-router-dom";
+import { compose } from "recompose";
+
+import { withFirebase } from "./Firebase";
 import { validateEmail } from "./functions";
 
 const INIT_FEEDBACK = {
@@ -8,11 +12,15 @@ const INIT_FEEDBACK = {
     secndpassok: true,
 }
 
-const Register = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [secndPass, setSecndPass] = useState('');
-    const [feedback, setFeedback] = useState({...INIT_FEEDBACK})
+const INIT_USERDATA = {
+    email: '',
+    password: '',
+    secndPass: '',
+}
+
+const RegisterBase = (props) => {
+    const [userData, setUserData] = useState({...INIT_USERDATA}); 
+    const [feedback, setFeedback] = useState({...INIT_FEEDBACK});
 
     const {
         mailok,
@@ -20,6 +28,20 @@ const Register = () => {
         secndpassok,
     } = feedback;
 
+    const {
+        email,
+        password,
+        secndPass,
+    } = userData;
+
+    const onChange = event => {
+        setUserData(prevState => (
+            {
+                ...prevState,
+                [event.target.name]: event.target.value
+            }
+        ))
+    }
 
     const onSubmit = event => {
         event.preventDefault();
@@ -30,6 +52,7 @@ const Register = () => {
                 mailok: false,
             }))
         } else if (password.length < 6) {
+            console.log(password.length);
             setFeedback(prevState => ({
                 ...prevState,
                 passwordok: false,
@@ -40,7 +63,15 @@ const Register = () => {
                 secndpassok: false,
             }))
         } else {
-            console.log("zarejestorwałeś się")
+            props.firebase
+            .doCreateUserWithEmailAndPassword(email, password)
+            .then(authUser => {
+                setUserData({...INIT_USERDATA});
+                props.history.push('/oddaj-rzeczy');
+            })
+            .catch(error => {
+                console.log(error.message)  
+            });
         }
     }
 
@@ -58,7 +89,7 @@ const Register = () => {
                                 name="email"
                                 type="text"
                                 value={email}
-                                onChange={event => setEmail(event.target.value)}
+                                onChange={onChange}
                             />
                              <div className={`form__valmess ${!!mailok && "invisble"}`} >Podany email jest nieprawidłowy!</div>
                         </div>
@@ -69,7 +100,7 @@ const Register = () => {
                                 name="password"
                                 type="password"
                                 value={password}
-                                onChange={event => setPassword(event.target.value)}
+                                onChange={onChange}
                             />
                             <div className={`form__valmess ${!!passwordok && "invisble"}`} >Podane hasło jest za krótkie!</div>
                         </div>
@@ -77,10 +108,10 @@ const Register = () => {
                             <label htmlFor="secndpass" className="register__label">Hasło</label>
                             <input
                                 className="input register-input"
-                                name="secndpass"
+                                name="secndPass"
                                 type="password"
                                 value={secndPass}
-                                onChange={event => setSecndPass(event.target.value)}
+                                onChange={onChange}
                             />
                             <div className={`form__valmess ${!!secndpassok && "invisble"}`} >Hasła nie są takie same!</div>
                         </div>
@@ -102,5 +133,10 @@ const Register = () => {
         </div>
     )
 }
+
+const Register = compose(
+        withRouter,
+        withFirebase,
+        )(RegisterBase);
 
 export default Register;
