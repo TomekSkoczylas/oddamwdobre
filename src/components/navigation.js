@@ -2,28 +2,30 @@ import React from "react";
 
 import { Link as RouterLink } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import LogoutBtn from './LogoutBtn';
 
+import FirstRowAuth from './NavFirstRowAuth';
 
 const Navigation = ({authUser}) => {
     return (
         <div className="navigation">
-            {authUser.authUser ? <FirstRowAuth/> : <FirstRowNonAuth/> }
+            {authUser ? <FirstRowAuth/> : <FirstRowNonAuth/> }
             <div className="navigation__second-row">
-                <ScrollLink 
+                {/* <ScrollLink 
                     to="Header" 
                     smooth={true} 
                     duration={500} 
                     className="navigation__scroll-link smal-btn"
                     >Start
-                </ScrollLink>
-                <ScrollLink 
+                </ScrollLink> */}
+                <a href='./#Header' className='smal-btn'>Start</a>
+                {/* <ScrollLink 
                     to="Main"   
                     smooth={true} 
                     duration={500} 
                     className="navigation__scroll-link smal-btn"
                     >O co chodzi?
-                </ScrollLink>
+                </ScrollLink> */}
+                <a href='/#Main' className="smal-btn">O co chodzi?</a>
                 {/* <ScrollLink 
                     to="About" 
                     smooth={true} 
@@ -62,12 +64,7 @@ const Navigation = ({authUser}) => {
 }
 
 
-const FirstRowAuth = () => (
-        <div className="navigation__first-row">
-            <span className="navigation__greeting">Witaj</span>
-            <LogoutBtn/>
-        </div>
-)
+
 
 const FirstRowNonAuth = () => (
     <div className="navigation__first-row">

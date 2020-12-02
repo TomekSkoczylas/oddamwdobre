@@ -29,9 +29,9 @@ const App = (props) => {
 
 
   return (
-    <AuthUserContext.Provider value={user}>
+    <AuthUserContext.Provider value={user.authUser}>
     <Router>
-        <Navigation authUser={user}/>
+        <Navigation authUser={user.authUser}/>
         <div className="App">
           <Route exact path="/" component={Home}/>
           <Route path='/login' component={Login}/>

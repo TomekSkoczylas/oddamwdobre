@@ -18,6 +18,14 @@
         justify-content: flex-end;
     }
 
+    &__greeting {
+        color: $dark-grey;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
     &__second-row {
         font-size: 14.2px;
         display: flex;
