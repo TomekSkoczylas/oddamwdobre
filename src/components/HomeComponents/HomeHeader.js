@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link as RouterLink } from "react-router-dom";
 
-// import Navigation from "../navigation";
+import { AuthUserContext } from "../Session";
 
 const HomeHeader = () => {
     return (
@@ -10,7 +10,6 @@ const HomeHeader = () => {
         <div className="header__img"/>
         <div className="HomeHeader" id="Header">
             <div className="header__right-side">
-                {/* <Navigation/> */}
                 <HeaderMain/>
             </div>
         </div>
@@ -29,11 +28,15 @@ const HeaderMain = () => {
                         Oddaj niechciane rzeczy w zaufane ręce</span>
                 <div className="decoration"></div>
                 <div className="header-main__btns">
-                    <RouterLink 
-                        to="./login" 
-                        className="header-main__btn big-btn"
-                        >Oddaj rzeczy
-                    </RouterLink>
+                    <AuthUserContext.Consumer>
+                        {authUser => (
+                            <RouterLink 
+                                to={ authUser ? "./oddaj-rzeczy" : "./login"} 
+                                className="header-main__btn big-btn"
+                                >Oddaj rzeczy
+                            </RouterLink>
+                        )}
+                    </AuthUserContext.Consumer>
                     <RouterLink  
                         to="./login" 
                         className="header-main__btn big-btn"

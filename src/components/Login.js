@@ -44,7 +44,6 @@ const LoginBase = props => {
            .then(()=> {
                setEmail('');
                setPassword('');
-               props.history.push('/oddaj-rzeczy');
            }) 
            .catch(error => {console.log(error)});
         }    
