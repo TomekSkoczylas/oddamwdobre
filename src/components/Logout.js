@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { withFirebase } from './Firebase';
 
 
 const Logout = () => {
