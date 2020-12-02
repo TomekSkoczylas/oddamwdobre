@@ -44,6 +44,7 @@ const LoginBase = props => {
            .then(()=> {
                setEmail('');
                setPassword('');
+               props.history.push('/');
            }) 
            .catch(error => {console.log(error)});
         }    
